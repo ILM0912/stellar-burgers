@@ -9,7 +9,7 @@ export const AppHeader: FC = () => {
 
   return (
     <>
-      <AppHeaderUI userName={user?.name} />;
+      <AppHeaderUI userName={user?.name} />
     </>
   );
 };
