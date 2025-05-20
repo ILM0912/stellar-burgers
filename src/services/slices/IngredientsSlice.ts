@@ -2,7 +2,6 @@ import { getIngredientsApi } from "@api";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { TIngredient } from "@utils-types";
 
-
 export type TStateIngredients = {
     ingredients: Array<TIngredient>;
     error: null | string;
@@ -15,15 +14,13 @@ const initialState: TStateIngredients = {
     loading: false
 };
 
-
 export const getIngredients = createAsyncThunk(
     'ingredients/getIngredients',
     async () => {
-        const respons = await getIngredientsApi();
-        return respons;
+        const response = await getIngredientsApi();
+        return response;
     }
 );
-
 
 export const ingredientsSlice = createSlice({
     name: 'ingredients',
@@ -44,11 +41,10 @@ export const ingredientsSlice = createSlice({
             })
     },
     selectors: {
-        getIngredientsSelector: (state) => {state.ingredients},
-        getLoadingStatus: (state) => {state.loading}
+        getIngredientsSelector: (state) => state.ingredients,
+        getLoadingStatus: (state) => state.loading
     }
 });
-
 
 export default ingredientsSlice;
 export const { getIngredientsSelector, getLoadingStatus } = ingredientsSlice.selectors;

@@ -7,6 +7,7 @@ import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { useDispatch } from '../../services/store';
 import { useEffect } from 'react';
 import { checkUserAuth } from '../../services/slices/UserSlice';
+import { getIngredients } from '../../services/slices/IngredientsSlice';
 import { ProtectedRoute } from '../ProtectedRoute';
 
 const App = () => {
@@ -23,6 +24,10 @@ const App = () => {
 
   useEffect(() => {
     dispatch(checkUserAuth());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getIngredients())
   }, [dispatch]);
 
   return (
@@ -44,7 +49,7 @@ const App = () => {
         <Route path='/ingredients/:id' element={<IngredientDetails />} />
         <Route path='*' element={<NotFound404 />} />
       </Routes>
-      { background && (
+      {background && (
         <Routes>
           <Route path='feed/:number' element={<Modal title={''} onClose={closeModal}><OrderInfo /></Modal>} />
           <Route path='/ingredients/:id' element={<Modal title={'Детали ингредиента'} onClose={closeModal}><IngredientDetails /></Modal>} />
