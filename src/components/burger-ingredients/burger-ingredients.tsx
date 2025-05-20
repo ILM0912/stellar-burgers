@@ -5,11 +5,13 @@ import { TTabMode } from '@utils-types';
 import { BurgerIngredientsUI } from '../ui/burger-ingredients';
 
 import { useSelector } from 'react-redux';
-import { getIngredientsSelector, getLoadingStatus } from '../../services/slices/IngredientsSlice';
+import {
+  getIngredientsSelector,
+  getLoadingStatus
+} from '../../services/slices/IngredientsSlice';
 import { Preloader } from '@ui';
 
 export const BurgerIngredients: FC = () => {
-
   const ingredients = useSelector(getIngredientsSelector);
   const isLoading = useSelector(getLoadingStatus);
 
@@ -54,7 +56,6 @@ export const BurgerIngredients: FC = () => {
       titleSaucesRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  
   if (isLoading) {
     return <Preloader />;
   }

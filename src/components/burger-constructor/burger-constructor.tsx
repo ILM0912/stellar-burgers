@@ -5,7 +5,13 @@ import { BurgerConstructorUI } from '@ui';
 import { useDispatch } from '../../services/store';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { clearOrder, createOrder, getConstructorItems, getOrderModalData, getOrderRequest } from '../../services/slices/BurgerConstructorSlice';
+import {
+  clearOrder,
+  createOrder,
+  getConstructorItems,
+  getOrderModalData,
+  getOrderRequest
+} from '../../services/slices/BurgerConstructorSlice';
 import { selectIsAuthenticated } from '../../services/slices/UserSlice';
 
 export const BurgerConstructor: FC = () => {
@@ -27,7 +33,7 @@ export const BurgerConstructor: FC = () => {
       constructorItems.bun?._id,
       ...constructorItems.ingredients.map((ingredient) => ingredient._id),
       constructorItems.bun?._id
-    ].filter(Boolean)
+    ].filter(Boolean);
 
     dispatch(createOrder(order));
   };
