@@ -32,8 +32,8 @@ const initialState: TBurgerConstructorState = {
 export const createOrder = createAsyncThunk(
   'order/createOrder',
   async (data: string[]) => {
-    const respons = await orderBurgerApi(data);
-    return respons;
+    const response = await orderBurgerApi(data);
+    return response;
   }
 );
 
@@ -59,9 +59,9 @@ export const burgerConstructorSlice = createSlice({
       action: PayloadAction<TConstructorIngredient>
     ) => {
       state.constructorItems.ingredients =
-        state.constructorItems.ingredients.filter((item) => {
-          item._id !== action.payload._id;
-        });
+        state.constructorItems.ingredients.filter(
+          (item) => item.id !== action.payload.id
+        );
     },
     moveUpIngredient: (state, action: PayloadAction<number>) => {
       const index = action.payload;
