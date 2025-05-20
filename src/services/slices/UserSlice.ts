@@ -162,7 +162,7 @@ export const userStateSlice = createSlice({
     selectIsAuthenticated: (state) => state.isAuthenticated,
     selectLoginUserError: (state) => state.error,
     selectIsAuthChecked: (state) => state.isAuthChecked,
-    selectloginUserRequest: (state) => state.loginUserRequest
+    selectLoginUserRequest: (state) => state.loginUserRequest
   }
 });
 
@@ -187,5 +187,5 @@ export const {
   selectIsAuthenticated,
   selectLoginUserError,
   selectIsAuthChecked,
-  selectloginUserRequest
+  selectLoginUserRequest
 } = userStateSlice.selectors;

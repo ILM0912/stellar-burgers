@@ -24,6 +24,7 @@ export const BurgerConstructor: FC = () => {
   const authorized = useSelector(selectIsAuthenticated);
 
   const onOrderClick = () => {
+    console.log(authorized);
     if (!authorized) {
       return navigate('/login');
     }
