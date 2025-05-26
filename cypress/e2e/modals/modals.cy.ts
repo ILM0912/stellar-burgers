@@ -7,17 +7,17 @@ describe('Работа модальных окон', function () {
     it('Открытие модального окна ингредиента', function () {
         cy.get('[data-cy=ingredient_643d69a5c3f7b9001cfa093c]')
             .should('exist')
-            .click()
+            .click();
 
         cy.get('[data-cy=modal]')
             .contains('Краторная булка N-200i')
-            .should('exist')
+            .should('exist');
     })
     
     it('Закрытие по клику на крестик', function () {
-        cy.get('[data-cy=ingredient_643d69a5c3f7b9001cfa093c]').click()
+        cy.get('[data-cy=ingredient_643d69a5c3f7b9001cfa093c]').click();
 
-        cy.get('[data-cy=modal]').should('exist')
+        cy.get('[data-cy=modal]').should('exist');
 
         cy.get('[data-cy=modal_close]').click();
 
@@ -25,9 +25,9 @@ describe('Работа модальных окон', function () {
     })
 
     it('Закрытие по клику на оверлей', function () {
-        cy.get('[data-cy=ingredient_643d69a5c3f7b9001cfa093c]').click()
+        cy.get('[data-cy=ingredient_643d69a5c3f7b9001cfa093c]').click();
 
-        cy.get('[data-cy=modal]').should('exist')
+        cy.get('[data-cy=modal]').should('exist');
 
         cy.get('[data-cy=modal_overlay]').click({ force: true });
 
