@@ -17,6 +17,7 @@ const config: Config = {
     '^@slices(.*)$': '<rootDir>/src/services/slices$1',
     '^@selectors(.*)$': '<rootDir>/src/services/selectors$1'
   },
+  testEnvironment: 'jsdom',
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
