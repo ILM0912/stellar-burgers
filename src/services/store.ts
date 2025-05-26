@@ -3,7 +3,7 @@ import userStateSlice from './slices/UserSlice';
 import ingredientsSlice from './slices/IngredientsSlice';
 import feedDataSlice from './slices/FeedDataSlice';
 import burgerConstructorSlice from './slices/BurgerConstructorSlice';
-import ordersHistorySlice from './slices/UserOrdersHistory';
+import ordersHistorySlice from './slices/UserOrdersSlice';
 
 import {
   TypedUseSelectorHook,
